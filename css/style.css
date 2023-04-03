@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --gray: #5c5c58;
+  --secondary_color: #f6f5f5;
+  --primary_color: rgb(28, 24, 24);
+  --black: #181823;
+  --text_color: #526e69;
+  --deep_orage: #ff6000;
+  --light_orage: #ffa559;
+  --body_color: #ffe6c7;
+  --extra: #ffe6c7;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--body_color);
+}
+.navbar {
+  background: rgb(231, 124, 57);
+  background: linear-gradient(
+    90deg,
+    rgba(231, 124, 57, 1) 0%,
+    rgba(255, 165, 89, 1) 52%,
+    rgba(227, 137, 26, 1) 100%
+  );
+  border-bottom: 1px solid var(--gray);
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem;
+}
+.navbar ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--black);
+}
+.navbar ul li:hover a {
+  color: var(--text_color);
+}
+
+.home {
+  padding: 1rem;
+  height: 90vh;
+  padding-top: 60px;
+}
+
+.home .content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.home .content p {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: var(--primary_color);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.home .content h1 {
+  padding-bottom: 0.5rem;
+  color: var(--primary_color);
+  font-size: 3rem;
+}
+.home .content h2 {
+  padding-bottom: 0.5rem;
+  color: var(--gray);
+  font-size: 3rem;
+}
+
+.about {
+  height: 95vh;
+  padding: 2rem;
+  padding-top: 60px;
+}
+.about .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .content .title {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  border-bottom: 1px solid var(--deep_orage);
+  border-width: 0.2rem;
+  margin-bottom: 1rem;
+}
+.about .content .detail:first-child {
+  margin-top: 2rem;
+}
+.about .content .detail p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  padding: 1rem;
+}
+
+.contact .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact .content .title {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+
+  border-width: 0.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact .content .title p:first-child {
+  border-bottom: 1px solid var(--deep_orage);
+  border-width: 0.2rem;
+}
+
+.contact .content input,
+textarea,
+button {
+  width: 40%;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+.contact .content input:hover,
+textarea:hover,
+button:hover {
+  outline-color: var(--deep_orage);
+  border-radius: 0.2rem;
+}
+.contact .content button {
+  background-color: var(--deep_orage);
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  min-height: 95vh;
+  padding: 1rem;
+}
+.gallery .title {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  border-width: 0.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--deep_orage);
+  border-width: 0.2rem;
+}
+.gallery ul {
+  list-style: none;
+}
+.gallery ul li img {
+  width: 100%;
+}
+.gallery ul {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .gallery {
+    margin-top: 20%;
+  }
+  .gallery ul {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .contact .content .title p {
+    font-size: 2rem;
+  }
+  .contact .content input,
+  textarea,
+  button {
+    width: 90%;
+  }
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+  .gallery .title {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  .gallery ul {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .contact .content input,
+  textarea,
+  button {
+    width: 90%;
+  }
+}
