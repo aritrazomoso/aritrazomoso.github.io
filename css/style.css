@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Space+Mono&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -112,11 +114,19 @@ body {
   font-weight: bold;
 }
 .about .content .detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.5rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.profile_pic {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background-position: center;
+  background-color: rgb(231, 124, 57);
+  border: 2px solid gray;
 }
 
 .contact {
@@ -173,8 +183,8 @@ button:hover {
 
 .gallery {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   min-height: 95vh;
@@ -209,9 +219,14 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  .gallery {
-    margin-top: 20%;
+  .about .content .detail {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1rem;
   }
+  .gallery {
+    padding-top: 4rem;
+  }
+
   .gallery ul {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -231,12 +246,20 @@ button:hover {
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px) {
+  .gallery {
+    padding-top: 4rem;
+  }
+
   .gallery ul {
     grid-template-columns: repeat(2, 1fr);
   }
   .contact .content input,
   textarea,
   button {
-    width: 90%;
+    width: 60vw;
   }
+}
+
+#active {
+  color: white;
 }
